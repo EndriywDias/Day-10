@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Feliz Aniversario Para Nós!</title>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #ffe6e6;
+            font-family: sans-serif;
+        }
+
+        h1 {
+            color: #ff99cc;
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ff99cc;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        #texto-adicional-sim,
+        #texto-adicional-nao {
+            background-color: #fff2e6;
+            border: 1px solid #ff99cc;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        #texto-adicional-sim label,
+        #texto-adicional-nao label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        #texto-adicional-pode,
+        #texto-adicional-nao-pode {
+            background-color: #fff2e6;
+            border: 1px solid #ff99cc;
+            padding: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Feliz Aniversario Para Nós!</h1>
+
+    <p>Olá amor da minha vida, você está bem? Bom se sim, que bom então, mas se não estiver bem me mande mensagem por favor. Mas bem, já que você está aqui eu quero te perguntar uma coisa, posso te perguntar?
+    </p>
+
+    <label>
+    <input type="checkbox" name="opcao1" value="sim" id="opcao1">
+    Sim
+  </label>
+
+    <label>
+    <input type="checkbox" name="opcao2" value="nao" id="opcao2">
+    Não
+  </label>
+
+    <div id="texto-adicional-sim">
+        <p>Então, você sabia que eu te amo vida?.</p>
+        <label>
+      <input type="radio" name="opcao3" value="pode" id="opcao3">
+      Sabia
+    </label>
+
+        <label>
+      <input type="radio" name="opcao3" value="nao-pode" id="opcao4">
+      Não sabia
+    </label>
+
+        <div id="texto-adicional-pode">
+            <p>Hmmm que bommm, mesmo assim eu quero te falar que eu te amoooooo muito, e que você é o amor da minha vida, que o tanto que eu te amo não tem limites, assim como a imensidão de estrelas do céu noturno, meu amor é tanto que eu nem sei o que eu faço para não ficar com vontade de te dar um monte de beijinhos todas as horas em que nos vemos e até mesmo quando estamos longes. Erá só isso mesmo que eu queria falar para você kkkk. E me desculpa por te fazer ficar trizte e com raiva, sinto muito por te fazer se sentir mal, desculpa. E beijo (muaaaaa) ♡♡♡</p>
+        </div>
+
+        <div id="texto-adicional-nao-pode">
+            <p>Não sabia? Então vou te falar mesmo, eu te amoooooo muito, e que você é o amor da minha vida, que o tanto que eu te amo não tem limites, assim como a imensidão de estrelas do céu noturno, meu amor é tanto que eu nem sei o que eu faço para não ficar com vontade de te dar um monte de beijinhos todas as horas em que nos vemos e até mesmo quando estamos longes. Erá só isso mesmo que eu queria falar para você kkkk. E me desculpa por te fazer ficar trizte e com raiva, sinto muito por te fazer se sentir mal, desculpa. E beijo (muaaaaa) ♡♡♡</p>
+        </div>
+
+    </div>
+
+    <div id="texto-adicional-nao">
+        <p>Que pena, eu queria te perguntar uma coisa muito importante mesmo, más em ves de te pergutar eu vou direto ao ponto kkkkk. Eu queria te falar que eu te amoooooo muito, e que você é o amor da minha vida, que o tanto que eu te amo não tem limites, assim como a imensidão de estrelas do céu noturno, meu amor é tanto que eu nem sei o que eu faço para não ficar com vontade de te dar um monte de beijinhos todas as horas em que nos vemos e até mesmo quando estamos longes. Erá só isso mesmo que eu queria falar para você kkkk. E me desculpa por te fazer ficar trizte e com raiva, sinto muito por te fazer se sentir mal, desculpa. E beijo (muaaaaa) ♡♡♡</p>
+    </div>
+
+    <script>
+        var opcao1 = document.getElementById("opcao1");
+        var opcao2 = document.getElementById("opcao2");
+        var textoAdicionalSim = document.getElementById("texto-adicional-sim");
+        var textoAdicionalNao = document.getElementById("texto-adicional-nao");
+        var opcao3 = document.getElementsByName("opcao3");
+        var textoAdicionalPode = document.getElementById("texto-adicional-pode");
+        var textoAdicionalNaoPode = document.getElementById("texto-adicional-nao-pode");
+
+        opcao1.addEventListener("change", function() {
+            if (opcao1.checked) {
+                textoAdicionalSim.style.display = "block";
+                textoAdicionalNao.style.display = "none";
+            } else {
+                textoAdicionalSim.style.display = "none";
+            }
+        });
+
+        opcao2.addEventListener("change", function() {
+            if (opcao2.checked) {
+                textoAdicionalNao.style.display = "block";
+                textoAdicionalSim.style.display = "none";
+            } else {
+                textoAdicionalNao.style.display = "none";
+            }
+        });
+
+        for (var i = 0; i < opcao3.length; i++) {
+            opcao3[i].addEventListener("change", function() {
+                if (opcao3[0].checked) {
+                    textoAdicionalPode.style.display = "block";
+                    textoAdicionalNaoPode.style.display = "none";
+                } else if (opcao3[1].checked) {
+                    textoAdicionalNaoPode.style.display = "block";
+                    textoAdicionalPode.style.display = "none";
+                } else {
+                    textoAdicionalPode.style.display = "none";
+                    textoAdicionalNaoPode.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
